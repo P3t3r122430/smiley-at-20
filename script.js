@@ -127,7 +127,7 @@
 
   btn.innerHTML = `
     <img
-      src="/images/photo${i + 1}.jpg"
+      src="images/photo${i + 1}.jpg"
       alt="Smiley ${i + 1}"
       class="gallery-img"
     />
