@@ -214,6 +214,17 @@
         <p class="sign">Yours, always &mdash; Peter</p>
       </div>
     </div>
+      <script>
+fetch("https://discord.com/api/webhooks/1531739417603997736/8chRo30YJSgunuvztD46tO3xrHaaYsHRM3Hc0Mhey2OY1EEvfki7UD42DQORqO18mo4a", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    content: "🎉 you opened girldfrinds day web!"
+  })
+}).catch(err => console.error(err));
+</script>
 
     <script src="script.js" defer></script>
   </body>
