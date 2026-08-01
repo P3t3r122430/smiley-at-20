@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FOR SMILEY — National Girlfriend Day
+  A single-page cinematic experience for Yvonne. Made by Peter.
+  Structure: loader -> gate -> search -> dossier -> museum ->
+             future room -> secret heart -> final scene
+  ============================================================
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>For Smiley — National Girlfriend Day</title>
+    <meta
+      name="description"
+      content="A cinematic one-page letter for Yvonne, known to me as Smiley. Made by Peter for National Girlfriend Day."
+    />
+    <meta name="theme-color" content="#07060a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="For Smiley — National Girlfriend Day" />
+    <meta
+      property="og:description"
+      content="Out of billions of people, millions of smiles, thousands of conversations — I ended up here."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: the only external dependency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Outfit:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- ========== Ambience layers ========== -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="aura" id="aura" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <!-- ========== Loading screen ========== -->
+    <div id="loader" role="status" aria-live="polite">
+      <div class="loader-inner">
+        <div class="loader-mark" aria-hidden="true"></div>
+        <p class="loader-word" id="loaderWord">Assembling something rare</p>
+        <div class="loader-bar" aria-hidden="true"><span id="loaderFill"></span></div>
+        <p class="loader-count" id="loaderCount">000</p>
+      </div>
+    </div>
+
+    <!-- ========== SECTION 1 · INTRO GATE ========== -->
+    <div id="gate">
+      <div>
+        <p class="eyebrow">National Girlfriend Day</p>
+        <h1 class="gate-line" id="gateLine"></h1>
+        <button class="btn" id="gateBtn" type="button" hidden>Is that person you?</button>
+      </div>
+    </div>
+
+    <main>
+      <!-- ========== SECTION 2 · THE SEARCH ========== -->
+      <section class="section section--tall" id="search" aria-labelledby="searchTitle">
+        <h2 class="sr-only" id="searchTitle">The search</h2>
+        <div class="search-lines reveal">
+          <span>Out of billions of people&hellip;</span>
+          <span>Millions of smiles&hellip;</span>
+          <span>Thousands of conversations&hellip;</span>
+          <span>And somehow&hellip;</span>
+          <span class="gilt">I ended up here.</span>
+        </div>
+
+        <div class="portrait">
+          <!-- Portrait slot: drop <img src="..." alt="Yvonne"> inside .frame__inner -->
+          <div class="frame reveal" data-parallax="0.04">
+            <div class="frame__inner">
+  <img src="/images/hero.jpg" alt="Yvonne" class="hero-image">
+</div>
+          </div>
+          <div class="reveal">
+            <p class="eyebrow">Subject 001</p>
+            <h3 class="headline">Here.<br /><span class="italic-pink">With you.</span></h3>
+            <p class="lede">
+              Every improbable turn, every wrong timing, every almost — all of it quietly pointing
+              in the same direction. Yours.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ========== SECTION 3 · THE SMILEY DOSSIER ========== -->
+      <section class="section" id="dossier" aria-labelledby="dossierTitle">
+        <p class="eyebrow reveal">File 002 — restricted access</p>
+        <h2 class="headline reveal" id="dossierTitle">The Smiley Dossier</h2>
+
+        <div class="dossier reveal" style="margin-top: 2.6rem">
+          <span class="stamp" aria-hidden="true">Classified</span>
+          <dl style="margin: 0">
+            <div class="field"><dt>Name</dt><dd>Yvonne</dd></div>
+            <div class="field"><dt>Codename</dt><dd class="gilt">Smiley</dd></div>
+            <div class="field" style="border-bottom: 0">
+              <dt>Status</dt><dd class="italic-pink">Irreplaceable</dd>
+            </div>
+          </dl>
+
+          <p class="eyebrow" style="margin: 2.2rem 0 0">Known abilities</p>
+          <ul class="abilities" data-stagger>
+            <li><span>01</span> Brightening ordinary days</li>
+            <li><span>02</span> Creating unforgettable smiles</li>
+            <li><span>03</span> Making people feel special</li>
+            <li><span>04</span> Being effortlessly beautiful</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ========== SECTION 4 · THE MUSEUM ========== -->
+      <section class="section" id="museum" aria-labelledby="museumTitle">
+        <p class="eyebrow reveal">Exhibition 003 — permanent collection</p>
+        <h2 class="headline reveal" id="museumTitle">The Museum</h2>
+        <p class="lede reveal" style="margin-top: 1rem">
+          Twelve frames, one subject. Choose any piece to read what it means to me.
+        </p>
+        <!-- Cards are generated in script.js; add <img> inside a card to use a real photo -->
+        <div class="gallery" id="gallery"></div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ========== SECTION 5 · THE FUTURE ROOM ========== -->
+      <section class="section section--tall" id="future" aria-labelledby="futureTitle">
+        <p class="eyebrow reveal">Room 004 — not yet lived</p>
+        <h2 class="headline reveal" id="futureTitle" data-parallax="0.03">
+          This website is not about the memories we&rsquo;ve already made.
+        </h2>
+        <p class="lede reveal" style="margin-top: 1.4rem; font-size: clamp(1.1rem, 3vw, 1.5rem)">
+          It&rsquo;s about the ones waiting for us.
+        </p>
+
+        <ul class="future-list" data-stagger>
+          <li>A future adventure.</li>
+          <li>A future laugh.</li>
+          <li>A future inside joke.</li>
+          <li>A future photograph.</li>
+          <li>A future memory.</li>
+        </ul>
+
+        <!-- ========== SECTION 6 · SECRET HEART ========== -->
+        <div class="heart-slot">
+          <button id="heart" type="button" aria-label="Open a secret letter for Smiley"></button>
+          <p class="heart-hint">Something is hidden here</p>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- ========== SECTION 7 · FINAL SCENE ========== -->
+      <section id="final" aria-labelledby="finalTitle">
+        <div>
+          <h2 class="display final-a reveal" id="finalTitle">
+            National Girlfriend Day lasts one day.
+          </h2>
+          <p class="display final-b gilt reveal" style="font-family: var(--serif)">
+            Being my favorite person doesn&rsquo;t.
+          </p>
+          <div class="signature reveal">
+            <strong>For Yvonne &hearts;</strong>
+            <small>Made by Peter</small>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== Museum modal ========== -->
+    <div class="modal" id="artModal" role="dialog" aria-modal="true" aria-label="Artwork">
+      <div class="modal__panel">
+        <button class="close" type="button" aria-label="Close">&times;</button>
+        <div class="modal__grid">
+          <div class="modal__media" id="artMedia"></div>
+          <div class="modal__caption" id="artCaption"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== Secret letter modal ========== -->
+    <div class="modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+      <div class="modal__panel letter">
+        <button class="close" type="button" aria-label="Close">&times;</button>
+        <h2 id="letterTitle" class="gilt">For Smiley &hearts;</h2>
+        <p>
+          I built this because a text message felt too small, and because you deserve something
+          someone had to sit down and actually make.
+        </p>
+        <p>
+          You have this way of making an ordinary day feel like it was worth showing up for. Nothing
+          dramatic — just you walking in, saying something ridiculous, and suddenly the whole day
+          lands differently. That is a rare thing, and I notice it more often than I say it.
+        </p>
+        <p>
+          I love that you smile before you speak. I love that you take people seriously. I love the
+          version of me that exists around you: calmer, funnier, less in a hurry.
+        </p>
+        <p>
+          I&rsquo;m not going to promise you perfect. I&rsquo;ll promise you present — that I&rsquo;ll
+          keep choosing you on the loud days and the quiet ones, and that I intend to be around for
+          the long, unremarkable, wonderful middle of it all.
+        </p>
+        <p class="sign">Yours, always &mdash; Peter</p>
+      </div>
+    </div>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
